@@ -1,0 +1,61 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initia-scale=1.0">
+    <title>Andal compurass Education Centre</title>
+    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    
+    <section id="header">
+        <a href="#"><img src="images/logo_2 (1).png" class="logo"></a>
+        <div>
+            <ul id="navbar">
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="shop.html">Courses</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="rr.html">More</a></li>
+            </ul>
+            <img id="menu-btn" src="" alt="">
+        </div>
+    </section>
+    <section id="boxx">
+        <div class="box">
+            <form onsubmit="sendEmail(); reset(); return false;">
+                <h3>let us know your Query</h3>
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Your Email ID" required>
+                <input type="text" id="phone" placeholder="Your Phone Number" required>
+                <textarea id="message" rows="4" placeholder="How can we help you?"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail(){
+            Email.send({
+            Host : "smtp.gmail.com",
+            Username : "computerporibar@gmail.com",
+            Password : "Computer@123",
+            To : 'computerporibar@gmail.com',
+            From : document.getElementById("email").value,
+            Subject : "New Contact Form Enquiry",
+            Body : "Name" +document.getElementById("name").value
+                +"<br> Email:" + document.getElementById("email").value
+                +"<br> Phone number:" + document.getElementById("phone").value
+                +"<br> Message:" + document.getElementById("mesage").value
+            }).then(
+            message => alert(Message_sent_successfully)
+            );
+        }
+    </script>
+</body>
+</html>
